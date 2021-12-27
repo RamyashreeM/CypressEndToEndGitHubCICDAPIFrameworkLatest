@@ -79,15 +79,16 @@ class HomePage
         return cy.get(".error.ng-binding");
     }
 
-    async getAccountBalance()
-    {
-      return cy.get(".borderM > :nth-child(3) > :nth-child(2)")
-       .then((balance)=>{
-       cy.log("Account balance is "+balance.text());
-       
-       return balance.text();
-        })
+     getAccountBalance() {
+        return new Promise((resolve) => {
+            cy.get(".borderM > :nth-child(3) > :nth-child(2)")
+            .then(balance => {
+                cy.log("Account balance is "+balance.text());
+                resolve(balance.text());
+                });
+        });
     }
+    
 
    /* this.getBalance = function() {
         var storeBalance = readBalance.getText().then(function(balance) {
