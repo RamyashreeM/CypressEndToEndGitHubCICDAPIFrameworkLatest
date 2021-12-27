@@ -1,0 +1,2 @@
+# CypressEndToEndGitHubCICDAPIFrameworkLatest
+This project automates banking application.
