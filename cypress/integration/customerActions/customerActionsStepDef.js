@@ -49,8 +49,10 @@ Then('Verify transaction failure message is displayed',function(){
     })
 })
 
-When('Get account balance before despositing the amount',async ()=>{
-    var accountBalance =  await customerPageObj.getAccountBalance();
-    cy.log("Initial balance of the account is "+accountBalance);
+When('Get account balance before despositing the amount', async function(){
+    customerPageObj.getAccountBalance().then(accountBalance=>{
+        cy.log("Initial balance of the account is "+accountBalance);
+    })
+
 })
 
