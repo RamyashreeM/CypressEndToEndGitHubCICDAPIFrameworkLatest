@@ -1,5 +1,11 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "customerName": "Harry Potter",
+  "accountNumber": "1005",
+  "amtToBeWithdrawn": "100",
+  "amtToBeDeposited": "25000",
+  "transactionFailureMsg": "Transaction Failed",
+  "depositSuccessfulMsg": "Deposit Successful",
+  "transactionSuccessfulMsg": "Transaction successful",
+  "creditTransactionType": "Credit",
+  "debitTransactionType": "Debit"
 }
