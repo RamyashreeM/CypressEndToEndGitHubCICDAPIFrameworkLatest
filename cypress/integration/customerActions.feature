@@ -13,5 +13,6 @@ Feature: This feature talks about all customer related actions like deposit, tra
     And I click on withdraw button
     Then Verify transaction failure message is displayed
     When Get account balance before despositing the amount
+    Then Print on the console
 
 

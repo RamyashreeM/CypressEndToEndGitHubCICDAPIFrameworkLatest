@@ -4,7 +4,11 @@ import CustomerPage from "../2-advanced-examples/pageObjects/CustomerPagePO";
 
 const homePageObj = new HomePage();
 const customerPageObj = new CustomerPage();
-
+let currentBalance=0;
+function updateCurrentBalance(balance)
+{
+    currentBalance=balance; 
+}
 Given('I open bank application and land on home page', ()=>{
     homePageObj.visit();
 })
@@ -51,7 +55,12 @@ Then('Verify transaction failure message is displayed',function(){
 
 When('Get account balance before despositing the amount',function(){
     customerPageObj.getAccountBalance().then(accountBalance=>{
+        updateCurrentBalance(Number(accountBalance)+10);
         cy.log("Initial balance of the account is "+accountBalance);
     })
 })
+Then('Print on the console',function(){
+        cy.log("Current balance of the account is "+currentBalance);
+})
+ 
 
